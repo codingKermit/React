@@ -6,7 +6,7 @@ import CardCss from '../css/Card.module.css';
 function Movie({coverImg, title, summary, genres, id, year}){
     return(
         <Card className="rounded-3 w-100">
-            <Link to={`/react/movie/${id}`} style={{textDecoration:'none'}} className="text-body">
+            <Link to={`/movie/${id}`} style={{textDecoration:'none'}} className="text-body">
                 <Card.Img variant="top-center" src={coverImg} className="p-3 rounded-2 mb-0 w-100"/>
                 <Card.Body>
                     <h5>
