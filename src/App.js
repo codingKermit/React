@@ -22,7 +22,9 @@ function App() {
         <Detail/>
       ),
     },
-  ]);
+  ],{
+    basename:"/react"
+  });
   return (
     <RouterProvider router={router}/>
   )
