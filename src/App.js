@@ -1,6 +1,7 @@
 import {
   createBrowserRouter,
   RouterProvider,
+  useRouteError,
 } from "react-router-dom";
 
 import { Detail } from "./routes/Detail";
@@ -9,15 +10,20 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 
+  const ErrorBoundary = () => {
+    const error = useRouteError();
+    return <div>⚠️ 주문 내역이 없습니다</div>;
+  };
+
   const router = createBrowserRouter([
     {
-      path: "/react",
+      path: "/",
       element: (
         <Home/>
       ),
     },
     {
-      path: "/react/movie/:id",
+      path: "/movie/:id",
       element: (
         <Detail/>
       ),

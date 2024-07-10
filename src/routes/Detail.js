@@ -36,7 +36,7 @@ export function Detail() {
 
     return (
         <div>
-            <Container className="mt-5">
+            <Container className="mt-5 mb-5">
                 <h2 className="mb-3"><Link style={{textDecoration : 'none'}} onClick={()=>navigate(-1)}>Back</Link></h2>
                 <Row>
                     <Col className="justify-content-center d-flex">
@@ -56,14 +56,14 @@ export function Detail() {
                             Link Count : {movie?.like_count}
                         </p>
                         <hr/>
-                        {movie?.description_intro != "" ? 
+                        {movie?.description_intro !== "" ? 
                         <div>
                             <h4>description_intro</h4>
                             <p>{movie?.description_intro}</p>
                             <hr />
                         </div>:null}
 
-                        {movie?.description_full != "" ? 
+                        {movie?.description_full !== "" ? 
                         <div>
                             <h4>description_full</h4>
                             <p>{movie?.description_full}</p>
