@@ -1,20 +1,35 @@
 import propTypes from "prop-types";
+import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import CardCss from '../css/Card.module.css';
 
-function Movie({coverImg, title, summary, genres, id}){
+function Movie({coverImg, title, summary, genres, id, year}){
     return(
-        <div>
-            <img src={coverImg} alt={title}/>
-            <h2><Link to={`/movie/${id}`}>{title}</Link></h2>
-            <p>{summary}</p>
-            <ul>
-                {genres.map((genre, index)=>{
-                    return(
-                    <li key={genre+index}>{genre}</li>
-                    )
-                })}
-            </ul>
-      </div>
+        <Card className="rounded-3 w-100">
+            <Link to={`/react/movie/${id}`} style={{textDecoration:'none'}} className="text-body">
+                <Card.Img variant="top-center" src={coverImg} className="p-3 rounded-2 mb-0 w-100"/>
+                <Card.Body>
+                    <h5>
+                        {title}
+                    </h5>
+                    <small>{year}</small>
+                    <ol>
+                        {genres.map((genre)=>(
+                            <li key={genre} style={{display: 'inline-block'}}>
+                                <small className="me-2">
+                                    {genre}
+                                </small>
+                            </li>
+                        )
+                        )}
+
+                    </ol>
+                    <Card.Text className={CardCss.text}>
+                        {summary}
+                    </Card.Text>
+                </Card.Body>
+            </Link>
+        </Card>
     )
 }
 

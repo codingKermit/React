@@ -1,0 +1,8 @@
+.text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    -webkit-line-clamp : 3;
+    white-space: normal;
+    overflow: hidden;
+}

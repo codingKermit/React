@@ -3,24 +3,24 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
-import { Detail, loader as detailLoader } from "./routes/Detail";
+import { Detail } from "./routes/Detail";
 import Home from "./routes/Home";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 
   const router = createBrowserRouter([
     {
-      path: "/",
+      path: "/react",
       element: (
         <Home/>
       ),
     },
     {
-      path: "/movie/:id",
+      path: "/react/movie/:id",
       element: (
         <Detail/>
       ),
-      loader : detailLoader
     },
   ]);
   return (

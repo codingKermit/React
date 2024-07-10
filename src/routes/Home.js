@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Movie from "../components/Movie";
-
+import { Col, Container, Row } from "react-bootstrap";
 
 function Home(){
 
@@ -33,16 +33,24 @@ function Home(){
     <div className="App">
         {loading ? <h1>Loading...</h1>:<h1>Movie List</h1>}
       <hr/>
-      {movies.map((movie)=>(
-        <Movie 
-            key={movie.id}
-            id={movie.id}
-            coverImg={movie.medium_cover_image} 
-            title={movie.title}
-            summary={movie.summary}
-            genres={movie.genres}
-        />
-      ))}
+      <Container>
+        <Row xs={1} sm={2} md={4}>
+        {movies.map((movie)=>
+          (
+            <Col className="mb-5 justify-content-center d-flex" key={movie.id}>
+                <Movie 
+                    id={movie.id}
+                    coverImg={movie.medium_cover_image} 
+                    title={movie.title}
+                    summary={movie.summary}
+                    genres={movie.genres}
+                    year={movie.year}
+                    />
+              </Col>
+          )
+        )}
+        </Row>
+      </Container>
     </div>
     )
 }
